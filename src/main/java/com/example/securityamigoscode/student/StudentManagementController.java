@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Arrays;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("management/api/v1/students")
 public class StudentManagementController {
 
@@ -23,17 +23,17 @@ public class StudentManagementController {
 
     @PostMapping
     public void registerNewStudent(@RequestBody Student student) {
-        System.out.println(student);
+        System.out.println(student.toString());
     }
 
     @DeleteMapping(path = "{studentId}")
     public void deleteStudent(@PathVariable("studentId") Integer studentId) {
-        System.out.println(studentId);
+        System.out.println(studentId.toString());
     }
 
     @PutMapping(path = "{studentId}")
     public void updateStudent(@PathVariable("studentId") Integer studentId,
                               @RequestBody Student student) {
-        System.out.println(String.format("%s %s", studentId, student));
+        System.out.println(String.format("%s %s", studentId, student.toString()));
     }
 }
