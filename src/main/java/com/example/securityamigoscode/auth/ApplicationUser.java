@@ -1,5 +1,6 @@
 package com.example.securityamigoscode.auth;
 
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -7,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Set;
 
+@Getter
 public class ApplicationUser implements UserDetails {
 
     private final Set<? extends GrantedAuthority> grantedAuthorities;
@@ -17,8 +19,8 @@ public class ApplicationUser implements UserDetails {
     private final boolean isCredentialsNonExpired;
     private final boolean isEnabled;
 
-    public ApplicationUser(String password,
-                           String username,
+    public ApplicationUser(String username,
+                           String password,
                            Set<SimpleGrantedAuthority> grantedAuthorities,
                            boolean isAccountNonExpired,
                            boolean isAccountNonLocked,
