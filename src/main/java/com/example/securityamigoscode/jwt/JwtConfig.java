@@ -21,11 +21,6 @@ public class JwtConfig {
     public JwtConfig() {
     }
 
-    @Bean
-    public SecretKey getSecretKeyForSigning() {
-        return Keys.hmacShaKeyFor(secretKey.getBytes());
-    }
-
     public String getAuthorizationHeader() {
         return HttpHeaders.AUTHORIZATION;
     }
