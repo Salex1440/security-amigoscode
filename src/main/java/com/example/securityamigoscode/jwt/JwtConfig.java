@@ -1,17 +1,15 @@
 package com.example.securityamigoscode.jwt;
 
 import com.google.common.net.HttpHeaders;
-import io.jsonwebtoken.security.Keys;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-
-import javax.crypto.SecretKey;
+import org.springframework.stereotype.Component;
 
 @Getter
 @Setter
 @ConfigurationProperties(prefix = "application.jwt")
+@Component
 public class JwtConfig {
 
     private String secretKey;
